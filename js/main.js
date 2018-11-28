@@ -1,4 +1,5 @@
 /* globals APIKEY */
+let codeHandler = (function (){
 
 const movieDataBaseURL = "https://api.themoviedb.org/3/";
 let imageURL = null;
@@ -225,3 +226,6 @@ function hideModal(e) {
     modal.classList.remove("on");
     modal.classList.add("off");
 }
+
+    
+})();
