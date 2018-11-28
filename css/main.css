@@ -85,7 +85,7 @@ header {
 
 }
 
-.hide{
+.hide {
     display: none;
 }
 
@@ -102,10 +102,17 @@ header {
     color: white;
     border: solid white;
     box-shadow: 3px 2px rgb(45 45 45);
+    transition: transform 0.5s linear;
 }
 
+.movieCard:hover {
+    cursor: pointer;
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+
 .movieImg {
-    float:left;
+    float: left;
 }
 
 .overlay {
@@ -196,16 +203,10 @@ header {
 
 #movies {}
 
-@media (max-width: 599px){
-    {
-        
-    }
+@media (max-width: 599px) {
+        {}
 }
 
-@media (min-width: 600px) and (max-width: 899px){
-   
-}
+@media (min-width: 600px) and (max-width: 899px) {}
 
-@media (min-width: 900px) {
-
-}
+@media (min-width: 900px) {}
