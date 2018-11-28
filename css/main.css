@@ -32,8 +32,11 @@ header {
 #search-button {
     background-color: hsl(215deg 100% 30%);
     cursor: pointer;
-    width: 16px;
-    height: auto;
+    width: 30px;
+    height: 30px;
+    transform: translateY(13px) translateX(-5px);
+    padding: 3px;
+    box-shadow: 1px 1px black;
 }
 
 #search-input {
@@ -46,13 +49,13 @@ header {
 
 .searchButtonDiv {
     display: inline;
-    border: solid black 1px;
 }
 
 #back-button {
     display: flex;
     float: left;
     background-color: hsl(215deg 100% 30%);
+    box-shadow: 1px 1px black;
 }
 
 #back-button:hover {
@@ -61,6 +64,7 @@ header {
 }
 
 #settings-button {
+    box-shadow: 1px 1px black;
     display: flex;
     float: right;
     background-color: hsl(215deg 100% 30%);
@@ -193,7 +197,9 @@ header {
 #movies {}
 
 @media (max-width: 599px){
-    
+    {
+        
+    }
 }
 
 @media (min-width: 600px) and (max-width: 899px){
