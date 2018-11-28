@@ -37,6 +37,11 @@ header {
     transform: translateY(13px) translateX(-5px);
     padding: 3px;
     box-shadow: 1px 1px black;
+    transition: transform 0.5s linear;
+}
+
+#search-button:hover{
+    cursor: pointer;
 }
 
 #search-input {
@@ -68,6 +73,12 @@ header {
     display: flex;
     float: right;
     background-color: hsl(215deg 100% 30%);
+     transition: transform 0.3s linear;
+}
+
+#settings-button:hover{
+    cursor: pointer;
+    transform: scale3d(1.2, 1.2, 1.2);
 }
 
 .iconic-property-stroke,
