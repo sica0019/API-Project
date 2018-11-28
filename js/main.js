@@ -4,6 +4,8 @@ const movieDataBaseURL = "https://api.themoviedb.org/3/";
 let imageURL = null;
 let imageSizes = [];
 let searchString = "";
+let searchResultsDiv = document.querySelector("#search-results");
+let recommendResultsDiv = document.querySelector("#recommend-results");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -13,26 +15,10 @@ function init() {
     getDataFromLocalStorage();
 
 
-    document.querySelector(".settingsButtonDiv").addEventListener("click", showOverlay);
+    searchResultsDiv.classList.add("hide");
+    recommendResultsDiv.classList.add("hide");
 
-    document
-        .querySelector(".cancelButton")
-        .addEventListener("click", hideOverlay);
-    document.querySelector(".overlay").addEventListener("click", hideOverlay);
 
-    document.querySelector(".saveButton").addEventListener("click", function (e) {
-        let optionList = document.getElementsByName("video");
-        let optionType = null;
-        for (let i = 0; i < optionList.length; i++) {
-            if (optionList[i].checked) {
-                optionType = optionList[i].value;
-                break;
-            }
-        }
-        alert(optionType);
-        console.log("You picked " + optionType);
-        hideOverlay(e);
-    });
 
 }
 
@@ -45,6 +31,24 @@ function addEventListeners() {
             startSearch();
         }
     })
+
+    document.querySelector(".saveButton").addEventListener("click", function (e) {
+        let optionList = document.getElementsByName("video");
+        let optionType = null;
+        for (let i = 0; i < optionList.length; i++) {
+            if (optionList[i].checked) {
+                optionType = optionList[i].value;
+                break;
+            }
+        }
+
+        console.log("You picked " + optionType);
+        hideOverlay(e);
+    });
+
+    document.querySelector(".settingsButtonDiv").addEventListener("click", showOverlay);
+    document.querySelector(".cancelButton").addEventListener("click", hideOverlay);
+    document.querySelector(".overlay").addEventListener("click", hideOverlay);
 
 }
 
@@ -67,27 +71,24 @@ function getPosterURLAndSizes() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
 
             imageURL = data.images.secure_base_url;
             imageSizes = data.images.poster_sizes;
 
-            console.log(imageURL);
-            console.log(imageSizes);
         })
         .catch(function (error) {
-            console.log(error);
+            alert(error);
         })
 }
 
 function startSearch() {
-    console.log("start search");
     searchString = document.getElementById("search-input").value;
     if (!searchString) {
         alert("Please enter search data");
         document.getElementById("search-input").focus();
         return;
     }
+    searchResultsDiv.classList.remove("hide");
 
     // this is a new search so you should reset any existing page data
 
@@ -167,17 +168,32 @@ function movieCards(data) {
         movieCardDiv.className = "movieCard";
         movieCardSec.className = "movieImg";
 
+        movieCardSec.appendChild(movieImg);
+
         documentFragment.appendChild(movieCardDiv);
     })
     return documentFragment;
 }
 
-function getRecommendations() {
-    console.log(this);
-    console.log(e.target);
+function getRecommendations(e) {
+    //console.log(this);
     let movieTitle = this.getAttribute("data-title");
-    console.log("you clicked: " + movieTitle);
+
+    searchString = movieTitle;
+
+    let movieID = this.getAttribute("data-id");
+
+    let url = `${movieDataBaseURL}movie/${movieID}/recommendations?api_key=${APIKEY}`;
+    fetch(url)
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data);
+
+            nextPage(data);
+        })
+
 }
+
 
 function showOverlay(e) {
     e.preventDefault();

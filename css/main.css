@@ -5,12 +5,12 @@
 * {
     padding: 0;
     margin: 0;
-    background-color: black;
     color: white;
 }
 
 html {
     font-family: 'Source Sans Pro', Geneva, Verdana, sans-serif;
+    background-color: black;
 }
 
 h1,
@@ -80,13 +80,17 @@ header {
 
 }
 
+.hide{
+    display: none;
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
 }
 
 .movieCard {
-    width: 50rem;
+    width: 90%;
     height: auto;
     margin: 1rem auto;
     background-color: hsl(215deg 100% 30%);
@@ -95,7 +99,9 @@ header {
     box-shadow: 3px 2px rgb(45 45 45);
 }
 
-.movieImg {}
+.movieImg {
+    float:left;
+}
 
 .overlay {
     position: fixed;
