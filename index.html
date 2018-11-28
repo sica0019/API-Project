@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Recommendations</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="backButtonDiv" title="Go Back">
+                <img data-src="img/arrow-right-angle-thick.svg" class="iconic iconic-md" id="back-button" alt="Back Button" title="Back" />
+            </div>
+
+            <div class="settingsButtonDiv">
+                <img data-src="img/list-rich.svg" class="iconic iconic-md" id="settings-button" alt="Settings Button" title="Settings" />
+            </div>
+
+
+            <input type="text" id="search-input" placeholder="search" />
+
+            <div class="searchButtonDiv">
+                <img data-src="img/magnifying-glass.svg" class="iconic iconic-md" id="search-button" alt="Search Button" title="Search" />
+            </div>
+
+        </header>
+
+        <div class="page" id="search-results">
+            <section class="title"></section>
+            <section class="content flex-container"></section>
+        </div>
+
+        <div class="page" id="recommend-results">
+            <section class="title"></section>
+            <section class="content flex-container"></section>
+        </div>
+    </main>
+
+
+    <div class="attribution">
+        <a href="https://www.themoviedb.org/"><img src="img/TMDB.png" alt="TMDB Icon" id="icon"></a>
+
+    </div>
+
+    <div class="overlay hide">&nbsp;</div>
+
+    <div class="modal off">
+        <div class="modal-header">
+            <h2>Options</h2>
+        </div>
+        <div class="modal-radio">
+            <input type="radio" name="video" value="Movies Option has been saved" id="movies" checked>
+            <label for="movie">Movies</label>
+
+            <input type="radio" name="video" value="Tv Shows option has been saved " id="tv" checked>
+            <label for="tvShow">Tv Shows</label>
+        </div>
+        <button class="cancelButton">Cancel</button>
+        <button class="saveButton">Save</button>
+
+    </div>
+
+
+
+    <script src="js/iconic.min.js"></script>
+    <script src="js/key.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+
+
+</html>

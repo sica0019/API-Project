@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css?family=Lora|Source+Sans+Pro");
+
+@import url("");
+
+* {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+html {
+    font-family: 'Source Sans Pro', Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Lora', "Times New Roman", Georgia, serif;
+}
+
+header {
+    margin: 1%;
+    padding: 35px;
+    background-color: hsl(215deg 100% 30%);
+    text-align: center;
+    border: groove white 5px;
+}
+
+#search-button {
+    background-color: hsl(215deg 100% 30%);
+    cursor: pointer;
+    width: 16px;
+    height: auto;
+}
+
+#search-input {
+    width: 40%;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.searchButtonDiv {
+    display: inline;
+    border: solid black 1px;
+}
+
+#back-button {
+    display: flex;
+    float: left;
+    background-color: hsl(215deg 100% 30%);
+}
+
+#back-button:hover {
+    transition: transform 0.2s linear;
+    transform: rotate(180deg);
+}
+
+#settings-button {
+    display: flex;
+    float: right;
+    background-color: hsl(215deg 100% 30%);
+}
+
+.iconic-property-stroke,
+.iconic-property-fill {
+    fill: white;
+    stroke: white;
+}
+
+.attribution {
+    text-align: center;
+}
+
+#icon {
+    width: 125px;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movieCard {
+    width: 50rem;
+    height: auto;
+    margin: 1rem auto;
+    background-color: hsl(215deg 100% 30%);
+    color: white;
+    border: solid white;
+    box-shadow: 3px 2px rgb(45 45 45);
+}
+
+.movieImg {}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    width: 500px;
+    height: 280px;
+    z-index: 200;
+    top: calc((100% - 280px)/2);
+    left: calc((100% - 500px)/2);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: white;
+    background-color: black;
+}
+
+/* use these class names to show or hide the overlay and modal window */
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.off {
+    transform: translateY(-400%);
+}
+
+.on {
+    transform: translateY(0);
+}
+
+.cancelButton,
+.saveButton {
+    width: 120px;
+    position: absolute;
+    border: none;
+    background-color: hsl(215deg 100% 30%);
+    color: white;
+    cursor: pointer;
+    padding: 0.25rem 2rem;
+    font-size: 1rem;
+    box-shadow: 1px 1px;
+}
+
+.saveButton {
+    bottom: 1rem;
+    right: 4rem;
+}
+
+.saveButton:hover {
+    background-color: hsl(215deg 100% 50%);
+}
+
+.cancelButton {
+    bottom: 1rem;
+    left: 4rem;
+}
+
+.cancelButton:hover {
+    background-color: red;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: hsl(215deg 100% 30%);
+    color: white;
+    text-align: center;
+}
+
+.modal-radio {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#tv {}
+
+#movies {}
+
+@media (max-width: 599px){
+    
+}
+
+@media (min-width: 600px) and (max-width: 899px){
+   
+}
+
+@media (min-width: 900px) {
+
+}
