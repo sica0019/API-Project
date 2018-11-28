@@ -41,6 +41,7 @@ header {
     text-align: center;
     background-color: white;
     color: black;
+    padding: 8px;
 }
 
 .searchButtonDiv {
