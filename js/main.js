@@ -51,9 +51,9 @@ let codeHandler = (function () {
         document.querySelector(".cancelButton").addEventListener("click", hideOverlay);
         document.querySelector(".overlay").addEventListener("click", hideOverlay);
 
-        
-        document.querySelector(".backButtonDiv").addEventListener("click", function(){
-           document.querySelector("#search-results").classList.add("hide"); 
+
+        document.querySelector(".backButtonDiv").addEventListener("click", function () {
+            document.querySelector("#search-results").classList.add("hide");
         });
     }
 

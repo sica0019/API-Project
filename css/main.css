@@ -40,7 +40,7 @@ header {
     transition: transform 0.5s linear;
 }
 
-#search-button:hover{
+#search-button:hover {
     cursor: pointer;
 }
 
@@ -73,10 +73,10 @@ header {
     display: flex;
     float: right;
     background-color: hsl(215deg 100% 30%);
-     transition: transform 0.3s linear;
+    transition: transform 0.3s linear;
 }
 
-#settings-button:hover{
+#settings-button:hover {
     cursor: pointer;
     transform: scale3d(1.2, 1.2, 1.2);
 }
@@ -218,6 +218,8 @@ header {
         {}
 }
 
-@media (min-width: 600px) and (max-width: 899px) {}
-
-@media (min-width: 900px) {}
+@media (min-width: 1200px) {
+    .movieCard {
+        width: 45%;
+    }
+}
